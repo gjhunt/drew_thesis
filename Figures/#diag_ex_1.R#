@@ -1,0 +1,14 @@
+
+
+levs<-leverage(CUR(rast@data@data,c=1,k=1,sv=rast@data@svd))
+
+par("mar"=c(5,7,5,5))
+plot(levs,xlab="Variable",ylab=" ",ylim=c(0,1),main="Leverage Scores",col="red",pch=16)
+mtext("Leverage\nScores",side=2,line=2,las=1)
+
+abline(h=1,lty=2)
+abline(h=.8,lty=2)
+abline(h=.6,lty=2)
+abline(h=.4,lty=2)
+abline(h=.2,lty=2)
+abline(h=0,lty=2)

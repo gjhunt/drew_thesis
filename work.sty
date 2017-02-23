@@ -1,0 +1,120 @@
+%%%%%%%%%%%%%%%%
+%   PACKAGES   %
+%%%%%%%%%%%%%%%%
+\usepackage[margin=1in]{geometry}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{enumerate}
+\usepackage{graphics,graphicx}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage[svgnames]{xcolor}
+
+\usepackage{nonfloat}
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{255,255,255}
+%\definecolor{shadecolor}{RGB}{220,220,220}
+
+%\usepackage{wasysym}
+
+%%%%%%%%%%%%%%%%
+% ENVIRONMENTS %
+%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%
+% SECTION ENVIRONMENT
+% Args: name,symbol,number,content
+\newenvironment{sect}[4]
+{
+\begin{shaded}
+$\,$\newline {\bf #1 #3}\hrulefill
+
+
+{\addtolength{\leftskip}{5mm}
+
+#4 
+
+}
+
+
+\hfill #2\newline\vspace{.5cm} \hrulefill
+\end{shaded}
+}
+
+
+
+%%%%%%%%%%%%%%%%
+% Various Math Environments
+%%%%%%%%%%%%%%%%
+% Args: number, content
+\newcommand\ex[2]{\sect{Example}{$\LHD$}{#1}{#2}}
+
+\newcommand\defn[2]{\sect{Definition}{$\rhd$}{#1}{#2}}
+\newcommand\prove[2]{\sect{Definition}{$\square$}{#1}{#2}}
+\newcommand\thrm[2]{\sect{Theorem}{$\blacksquare$}{#1}{#2}}
+\newcommand\coro[2]{\sect{Corollary}{$\blacksquare$}{#1}{#2}}
+
+%%%%%%%%%%%%%%%%
+% Cover Page
+%%%%%%%%%%%%%%%%
+% Args: title, subtitle
+\newenvironment{coverpage}[1]
+{
+  \begin{titlepage}
+    \begin{center}
+    Drew University\\
+    College of Liberal Arts\\
+    \vspace*{\fill}
+      {\Large {\bf #1}}\\[0.7cm]
+      A Thesis in Mathematics\\[1cm]
+      by\\
+      Gregory J. Hunt\\[1cm]
+      Submitted in Partial Fulfillment of the Requirements\\ for the Degree of Bachelor of Arts\\ With Specialized Honors in Mathematics\\[.5cm]
+      May 2013\\[.5cm]
+      Advisor: Jon Kettenring\\
+      Thesis Committee Members:\\
+      Christopher Andrews\\
+      Christopher Apelian\\
+      Peter Likarish\\
+    \end{center}
+    \vspace*{\fill}
+  \end{titlepage}
+}
+
+%%%%%%%%%%%%%%%%
+% Pictures
+%%%%%%%%%%%%%%%%
+% Args: jpg file
+\newenvironment{pic}[1]
+{
+  \begin{figure}[h!tb]
+    \includegraphics[width=50mm]{#1.pdf}
+    \figurename{ #1.}
+  \end{figure}
+}
+
+%%%%%%%%%%%%%%%%
+% Command redefinitions
+%%%%%%%%%%%%%%%%
+\newcommand\union{\cup}
+\newcommand\intersect{\cap}
+\newcommand\Union{\bigcup}
+\newcommand\Intersect{\bigcap}
+\newcommand\intersection{\intersect}
+\newcommand\Intersection{\Intersect}
+
+%%%%%%%%%%%%%%%%
+% Grading marks
+%%%%%%%%%%%%%%%%
+\newcommand\correct{{\bf{{\color{ForestGreen} Correct.}}}}
+\newcommand\wrong{{\color{BrickRed} Wrong.}}
+\newcommand\corro{{\color{Blue} Corroborates}}
+
+
+ 
